@@ -36,15 +36,16 @@ HH_REDIRECT_URI = config['headhunter']['redirect_uri']
 HH_AREAS_URL = config['headhunter']['areas_url']
 HH_VACANCIES_URL = config['headhunter']['vacancies_url']
 HH_EXPERIENCE_IDS = config['headhunter']['experience_ids']
-HH_NOT_INTERESTED_ROLES = config['headhunter']['not_interested_roles']
+HH_CATEGORY_ID = config['headhunter']['category_id']
+HH_ROLES = config['headhunter']['roles']
 HH_ACCESS_TOKEN = TOKEN['access_token']
 
 # Compute professional IDs
 HH_PROF_ID = [
     int(role['id']) for category in ROLES['categories']
-    if category['id'] == '11'
+    if category['id'] == HH_CATEGORY_ID
     for role in category['roles']
-    if role['id'] not in HH_NOT_INTERESTED_ROLES
+    if role['id'] in HH_ROLES
 ]
 
 # Database configuration
