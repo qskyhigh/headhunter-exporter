@@ -1,0 +1,24 @@
+*.log
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# pycharm
+.idea
+.DS_Store
+
+data/token.json
+data/service_account.json
+dbase.db
+main_bkp.py
+url.txt

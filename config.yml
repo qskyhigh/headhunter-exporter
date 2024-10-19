@@ -1,0 +1,51 @@
+# config.yml
+google_sheets:
+  config_file: "./data/service_account.json"
+  sheet_url: ${GOOGLE_SHEET_URL}
+  page_name: "HH_Vacancies"
+
+headhunter:
+  auth_code: ""
+  client_id: ${CLIENT_ID}
+  client_secret: ${CLIENT_SECRET}
+  redirect_uri: ${REDIRECT_URI}
+  areas_url: "https://api.hh.ru/areas"
+  vacancies_url: "https://api.hh.ru/vacancies"
+  experience_ids:
+    - "noExperience"
+    - "between1And3"
+    - "between3And6"
+    - "moreThan6"
+  not_interested_roles:
+    - "112"
+    - "114"
+    - "36"
+    - "150"
+    - "12"
+    - "25"
+    - "34"
+    - "73"
+    - "155"
+    - "164"
+    - "157"
+    - "107"
+    - "113"
+    - "148"
+    - "116"
+    - "121"
+    - "124"
+    - "126"
+
+database:
+  sqlite:
+    path: "sqlite:///dbase.db"
+  postgres:
+    username: ${DB_USERNAME:-pgadmin}
+    password: ${DB_PASSWORD:-qwerty123}
+    host: ${DB_HOST:-localhost}
+    port: ${DB_PORT:-5432}
+    database: ${DB_DATABASE:-mydatabase}
+    schema: "public"
+    table: "vacancies"
+
+target_source: "sheets"  # sheets/postgres/sqlite
